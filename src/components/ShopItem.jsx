@@ -17,6 +17,7 @@ export default function ShopItem({ product, handleAdd }) {
     <div>
       <img src={product.image} />
       <p>{product.title}</p>
+      <p>${product.price}</p>
       <input
         ref={inputRef}
         type="number"
@@ -25,7 +26,7 @@ export default function ShopItem({ product, handleAdd }) {
       />
       <button onClick={() => handleValueChange(-1)}>-</button>
       <button onClick={() => handleValueChange(1)}>+</button>
-      <button onClick={() => handleAdd(product.id, inputRef.current.value)}>
+      <button onClick={() => handleAdd(product.id, +inputRef.current.value)}>
         Add
       </button>
     </div>

@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import CartItem from "./CartItem";
 
-export default function Cart({ products, cart, handleDelete, handleBuy }) {
+export default function Cart({ products, cart, handleDelete }) {
   const total =
     cart.length > 0
       ? cart
@@ -32,8 +32,8 @@ export default function Cart({ products, cart, handleDelete, handleBuy }) {
           />
         ))}
       </div>
-      <p>{"$" + Math.round(total * 100) / 100}</p>
-      <button onClick={handleBuy}>Checkout</button>
+      <p>Total: ${Math.round(total * 100) / 100}</p>
+      <button disabled={true}>Checkout</button>
     </div>
   );
 }
@@ -42,5 +42,4 @@ Cart.propTypes = {
   products: PropTypes.array,
   cart: PropTypes.array,
   handleDelete: PropTypes.func,
-  handleBuy: PropTypes.func,
 };

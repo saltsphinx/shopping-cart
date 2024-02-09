@@ -5,7 +5,8 @@ export default function CartItem({ product, quantity, handleDelete }) {
     <div>
       <img src={product.image} />
       <p>{product.title}</p>
-      <p>${product.price * quantity}</p>
+      <p>${Math.round(product.price * quantity * 100) / 100}</p>
+      <p>{quantity}</p>
       <button
         onClick={() => {
           handleDelete(product.id);

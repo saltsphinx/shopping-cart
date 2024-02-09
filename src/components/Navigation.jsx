@@ -1,20 +1,26 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
-export default function Navigation({ cartSize }) {
+export default function Navigation({ cart }) {
+  const cartSize =
+    cart.length > 0
+      ? cart.map((item) => item.quantity).reduce((prev, curr) => prev + curr, 0)
+      : 0;
+
   return (
     <nav>
       <ul>
         <li>
-          <a href="">Home</a>
+          <Link to="/">Home</Link>
         </li>
         <li>
-          <a href="">Shop</a>
+          <Link to="/shop">Shop</Link>
         </li>
         <li>
-          <a href="">
+          <Link to="/cart">
             <img src="../assets/shopping_cart.svg" />
             <span>{cartSize}</span>
-          </a>
+          </Link>
         </li>
       </ul>
     </nav>
@@ -22,5 +28,5 @@ export default function Navigation({ cartSize }) {
 }
 
 Navigation.propTypes = {
-  cartSize: PropTypes.number,
+  cart: PropTypes.array,
 };
