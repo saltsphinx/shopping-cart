@@ -43,18 +43,20 @@ export default function App() {
   }, []);
 
   return (
-    <div>
-      <h1>Shop</h1>
-      <Navigation cart={cart} />
+    <>
+      <header>
+        <h1>Bella's</h1>
+        <Navigation cart={cart} />
+      </header>
       {isLoading && <p>Loading...</p>}
       {products && page == "shop" ? (
         <Shop products={products} handleAdd={handleAdd} />
       ) : page == "cart" ? (
         <Cart products={products} cart={cart} handleDelete={handleDelete} />
       ) : (
-        <Home />
+        products && <Home />
       )}
-    </div>
+    </>
   );
 }
 

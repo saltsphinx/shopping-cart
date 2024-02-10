@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;900&family=Roboto:wght@100&display=swap');
+
+html {
+  font-family: 'Inter', Verdana, Geneva, Tahoma, sans-serif;
+}
+
+html * {
+  font-family: inherit;
+}
+
+header,
+nav > ul {
+  display: flex;
+}
+
+body {
+  margin: 0;
+}
+
+header {
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5rem;
+  position: sticky;
+  background: #00a8ff;
+}
+
+header a {
+  text-decoration: none;
+  font-weight: 600;
+}
+
+header * {
+  color: white;
+}
+
+ul {
+  list-style: none;
+  gap: 1.5rem;
+}
