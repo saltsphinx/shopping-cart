@@ -5,6 +5,7 @@ import Navigation from "./Navigation";
 import Shop from "./Shop";
 import Cart from "./Cart";
 import Home from "./Home";
+import Footer from "./Footer";
 
 export default function App() {
   const [products, setProducts] = useState(null);
@@ -44,7 +45,7 @@ export default function App() {
 
   return (
     <>
-      <header>
+      <header className="shadow">
         <h1>Bella's</h1>
         <Navigation cart={cart} />
       </header>
@@ -56,6 +57,7 @@ export default function App() {
       ) : (
         products && <Home />
       )}
+      <Footer />
     </>
   );
 }

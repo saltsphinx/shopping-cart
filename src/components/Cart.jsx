@@ -21,8 +21,11 @@ export default function Cart({ products, cart, handleDelete }) {
     );
   }
   return (
-    <div>
-      <div>
+    <main>
+      <div className="hero">
+        <h2>Your Cart</h2>
+      </div>
+      <div className="item-wrapper">
         {cart.map((item) => (
           <CartItem
             key={item.id}
@@ -32,9 +35,9 @@ export default function Cart({ products, cart, handleDelete }) {
           />
         ))}
       </div>
-      <p>Total: ${Math.round(total * 100) / 100}</p>
+      <p>Subtotal: ${Math.round(total * 100) / 100}</p>
       <button disabled={true}>Checkout</button>
-    </div>
+    </main>
   );
 }
 

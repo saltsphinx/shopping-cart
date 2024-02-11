@@ -14,7 +14,7 @@ export default function ShopItem({ product, handleAdd }) {
   };
 
   return (
-    <div>
+    <div className="item">
       <img src={product.image} />
       <p>{product.title}</p>
       <p>${product.price}</p>
